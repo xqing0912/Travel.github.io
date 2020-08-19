@@ -1,5 +1,5 @@
 <template>
-  <div>List</div>
+  <div>目前List</div>
 </template>
 
 <script>

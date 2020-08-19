@@ -3,10 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import './assets/styles/reset.css'
+import './assets/styles/border.css'
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+/* 路由就是根據網址的不同，返回不同的内容給用戶 */
 new Vue({
   el: '#app',
   router,

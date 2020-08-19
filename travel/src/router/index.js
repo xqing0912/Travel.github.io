@@ -6,6 +6,8 @@ import List from '@/pages/list/List'
 Vue.use(Router)
 
 export default new Router({
+
+  // router就是路由網址的設定
   routes: [
     {
       path: '/',
