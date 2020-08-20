@@ -1,13 +1,19 @@
 <template>
 <!-- template裏面的所有内容都需要被包裹在一個div裏面 -->
 <div>
-  hello world
+  <home-header></home-header>
 </div>
 </template>
 
 <script>
+/* 引入HomeHeader的組件頁面 */
+import HomeHeader from './components/Header'
 export default {
-  name: 'Home'
+  name: 'Home',
+  /* 因爲是局部組件，所以要在components屬性中注冊HomeHeader這一組件 */
+  components: {
+    HomeHeader
+  }
 }
 </script>
 
