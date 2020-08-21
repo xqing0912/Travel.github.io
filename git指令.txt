@@ -1,0 +1,14 @@
+在cmd命令行裏執行
+
+把項目提交到本地緩衝區：git add . ；
+
+本地緩衝區的内容提交到本地倉庫：git commit -m '對項目的描述' ；
+
+本地改變的内容提交到綫上git：git push ;
+
+把綫上的分支拉到本地： git pull ;
+
+把本地的分支合并到綫上的分支：git checkout master ;
+
+把自己開發的分支與綫上master合并：git merge origin/你的分支名稱，再git push
+
