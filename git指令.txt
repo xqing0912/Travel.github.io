@@ -6,21 +6,17 @@
 
 本地改變的内容提交到綫上git：git push ;
 
-<<<<<<< Updated upstream
-把綫上的分支拉到本地： git pull ;
+
+========================================================================
+
+把綫上的分支clone到本地： git pull ;
+
+切換分支：git checkout  分支名稱，例如（git checkout index-icons）;
+
+查看目前所在分支： git status ;
 
 把本地的分支合并到綫上的分支：git checkout master ;
 
-把自己開發的分支與綫上master合并：git merge origin/你的分支名稱，再git push
-=======
-=============================================================
+把綫上的分支與綫上主幹master合并：git merge origin/你的分支名稱（例如：git merge origin/index-swiper），再git push
 
-把綫上的分支拉到本地： git pull ;
-
-查看本地目前的所在的分支：git checkout 你建立的分支名稱，或者用 git status
-
-把本地的分支合并到綫上的分支：git checkout master ;
-
-把自己開發的分支與綫上master合并：git merge origin/你的分支名稱（例如：git merge origin/index-swiper），再git push
->>>>>>> Stashed changes
 
