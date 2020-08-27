@@ -1,8 +1,11 @@
+@import "../mixins.styl"
 $blackTextColor:#333
 
 .icons >>> .swiper-container
     height: 0
     padding-bottom: 60%
+.icons
+    margin-top: .1rem
 
     .icon 
         position: relative
@@ -35,9 +38,8 @@ $blackTextColor:#333
             line-height:1rem
             text-align: center
             color:$blackTextColor
-            overflow: hidden
-            white-space: nowrap
-            text-overflow: ellipsis
+            // 如果有太多文字就會顯示省略號
+            ellipsis()
             
 
 
