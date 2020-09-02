@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
-        <swiper :options="swiperOption">
+        <swiper :options="swiperOption" v-if="showSwiper">
             <!-- slides -->
-            <swiper-slide v-for="item of swiperList" :key="item.id">
+            <swiper-slide v-for="item of list" :key="item.id">
                 <img class="swiper-image"  :src="item.imgUrl" />
             </swiper-slide>
             <!-- Optional controls -->
@@ -15,6 +15,9 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
@@ -22,24 +25,13 @@ export default {
           el: '.swiper-pagination'
         },
         loop: true,
-        autoplay: {delay: 3000}
-      },
-      swiperList: [{
-        id: '001',
-        imgUrl: 'https://images.unsplash.com/photo-1562674111-fa6a64c1b345?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-      }, {
-        id: '002',
-        imgUrl: 'https://images.unsplash.com/photo-1575458289930-f053c4f6b9e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-      }, {
-        id: '003',
-        imgUrl: 'https://images.unsplash.com/photo-1597796608813-002d2de5123d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-      }, {
-        id: '004',
-        imgUrl: 'https://images.unsplash.com/photo-1597393580483-4f928fc9fca1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-      }, {
-        id: '005',
-        imgUrl: 'https://images.unsplash.com/photo-1597839219234-a513027b4e44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-      }]
+        autoplay: {delay: 2000}
+      }
+    }
+  },
+  computed: {
+    showSwiper () {
+      return this.list.length
     }
   }
 }

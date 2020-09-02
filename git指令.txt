@@ -20,3 +20,9 @@
 把綫上的分支與綫上主幹master合并：git merge origin/你的分支名稱（例如：git merge origin/index-swiper），再git push
 
 
+==================================================================================
+目前的分支與綫上的分支合并：git merge 要與它合并分支的名稱，（例如：git merge index-recommend）；
+
+查看所有的分支：git branch
+
+
