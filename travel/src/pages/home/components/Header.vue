@@ -12,12 +12,14 @@
     </span>
       輸入城市/景點/游玩主題
   </div>
-  <div class="header-right">
-    {{this.city}}
-    <span class="iconfont arrow-icon">
-      &#xe610;
-    </span>
-  </div>
+  <router-link to='/city'>
+    <div class="header-right">
+      {{this.city}}
+      <span class="iconfont arrow-icon">
+        &#xe610;
+      </span>
+    </div>
+   </router-link>
 </div>
 </template>
 
