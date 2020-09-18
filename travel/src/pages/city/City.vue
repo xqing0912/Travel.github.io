@@ -3,9 +3,14 @@
       <city-header></city-header>
       <city-search></city-search>
       <city-list
-        :cities="all_cities" :hotCities="hot_cities">
+        :cities="all_cities"
+        :hotCities="hot_cities"
+        :alphabet="alphabet">
       </city-list>
-      <city-alphabet :all_cities="all_cities"></city-alphabet>
+      <city-alphabet
+       :all_cities="all_cities"
+       @changeList="handleAlphabetChange">
+      </city-alphabet>
   </div>
 </template>
 
@@ -26,7 +31,8 @@ export default {
   data () {
     return {
       all_cities: {},
-      hot_cities: []
+      hot_cities: [],
+      alphabet: ''
     }
   },
   methods: {
@@ -35,13 +41,17 @@ export default {
         .then(this.handleGetCityInfo)
     },
     handleGetCityInfo (res) {
-      console.log(res)
       res = res.data
       if (res.ret && res.data) {
         const data = res.data
         this.all_cities = data.cities
         this.hot_cities = data.hotCities
       }
+    },
+    // 接收到changeList事件和參數后的操作
+    handleAlphabetChange (alphabet) {
+      // console.log(alphabet)
+      this.alphabet = alphabet
     }
   },
   mounted () {
