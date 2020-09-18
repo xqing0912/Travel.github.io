@@ -36,7 +36,9 @@ export default {
   },
   //  頁面加載并更行完成后執行updated生命周期函數
   updated () {
+    //  抓取DOM裏面的字母A與網頁頂部的内容
     this.startY = this.$refs['A'][0].offsetTop
+    // console.log(this.startY)
   },
   methods: {
     // 獲取使用和點擊的字母
@@ -55,7 +57,9 @@ export default {
           clearTimeout(this.timer)
         }
         this.timer = setTimeout(() => {
+          // 手指目前滑到的位置與網頁頂端的高度
           const touchY = e.touches[0].clientY - 79
+          // 目前滑倒的字母的位置
           const index = Math.floor((touchY - this.startY) / 20)
           if (index >= 0 && index < this.letters.length) {
             this.$emit('change', this.letters[index])
