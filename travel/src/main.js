@@ -7,6 +7,7 @@ import router from './router'
 import fastClick from 'fastclick'
 /* vue-awesome-swiper */
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './storehouse'
 /* 引入reset.css,網頁初始化,整個文件裏的styles是自定義的路徑,指build/webpack.base.conf.js的resolve下的替代路徑 */
 import 'styles/reset.css'
 /* 引入border.css,解決移動端1px邊框的問題 */
@@ -25,6 +26,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

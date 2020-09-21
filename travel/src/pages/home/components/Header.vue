@@ -12,9 +12,11 @@
     </span>
       輸入城市/景點/游玩主題
   </div>
+  <!-- router-link，聲明方式導航，相當於<a>標簽 -->
   <router-link to='/city'>
     <div class="header-right">
-      {{this.city}}
+      <!-- 獲取Vuex建立的共用數據倉庫的資料 -->
+      {{this.$store.state.city}}
       <span class="iconfont arrow-icon">
         &#xe610;
       </span>
@@ -25,9 +27,6 @@
 
 <script>
 export default {
-  props: {
-    city: String
-  },
   name: 'HomeHeader'
 }
 </script>

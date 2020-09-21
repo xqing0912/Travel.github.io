@@ -7,7 +7,7 @@
                 </div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">北京</div>
+                        <div class="button">{{this.$store.state.city}}</div>
                     </div>
                 </div>
             </div>
@@ -18,7 +18,8 @@
                 <div class="button-list">
                     <div class="button-wrapper"
                          v-for="item of hotCities"
-                         :key="item.id">
+                         :key="item.id"
+                          @click="handleCityClick(item.name)">
                             <div class="button">
                                 {{item.name}}
                             </div>
@@ -35,7 +36,8 @@
                 <div class="item-list">
                     <div class="item border-bottom"
                          v-for="in_item of item"
-                         :key="in_item.id">
+                         :key="in_item.id"
+                          @click="handleCityClick(in_item.name)">
                             {{in_item.name}}
                     </div>
                 </div>
@@ -53,8 +55,13 @@ export default {
     cities: Object,
     alphabet: String
   },
-  mounted () {
-    this.scroll = new BetterScroll(this.$refs.wrapper)
+  methods: {
+    handleCityClick (city) {
+    // 在store裏面透過commit方法直接調用叫changeCity的mutations，并把city傳給它
+      this.$store.commit('changeCity', city)
+      //  頁面跳轉到首頁，此爲編程方式的導航
+      this.$router.push('/')
+    }
   },
   watch: {
     alphabet () {
@@ -68,6 +75,9 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },
+  mounted () {
+    this.scroll = new BetterScroll(this.$refs.wrapper)
   }
 }
 </script>
