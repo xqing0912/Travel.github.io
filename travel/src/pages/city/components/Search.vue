@@ -1,12 +1,73 @@
 <template>
+  <div>
     <div class="search">
-        <input class="search-input" type="text" placeholder="請輸入城市名稱" />
+          <input v-model="keywords" class="search-input" type="text" placeholder="請輸入城市名稱" />
     </div>
+    <!-- 當有輸入keywords時，才顯示此div元素 -->
+    <div class="search-content"
+     ref="search"
+      v-show="keywords">
+      <ul>
+        <li class="search-item border-bottom"
+         v-for="item of list" :key="item.id">
+         {{item.name}}
+        </li>
+        <!-- 當搜不到相關内容時，就顯示此li元素 -->
+        <li class="search-item border-bottom" v-show="hasNoData">
+          無相關資料
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
+//  引人better-scroll讓頁面可以向下滑動
+import Bscroll from 'better-scroll'
 export default {
-  name: 'CitySearch'
+  name: 'CitySearch',
+  props: {
+    cities: Object
+  },
+  data () {
+    return {
+      keywords: '',
+      list: [],
+      timer: null
+    }
+  },
+  computed: {
+    // 當在list的長度不存在時，回傳
+    hasNoData () {
+      return !this.list.length
+    }
+  },
+  watch: {
+    keywords () {
+      if (this.timer) {
+        clearTimeout(this.timer)
+      }
+      //  當keywords不存在時,就不顯示下面列表
+      if (!this.keywords) {
+        this.list = []
+        return
+      }
+      this.timer = setTimeout(() => {
+        const result = []
+        for (let i in this.cities) {
+          this.cities[i].forEach((value) => {
+            if (value.spell.indexOf(this.keywords) > -1 || value.name.indexOf(this.keywords) > -1) {
+              result.push(value)
+            }
+          })
+        }
+        this.list = result
+      }, 100)
+    }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.search)
+  }
 }
 </script>
 
