@@ -9,7 +9,9 @@
       v-show="keywords">
       <ul>
         <li class="search-item border-bottom"
-         v-for="item of list" :key="item.id">
+         v-for="item of list"
+         :key="item.id"
+          @click="handleCityClick(item.name)">
          {{item.name}}
         </li>
         <!-- 當搜不到相關内容時，就顯示此li元素 -->
@@ -63,6 +65,14 @@ export default {
         }
         this.list = result
       }, 100)
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+    // 在store裏面透過commit方法直接調用叫changeCity的mutations，并把city傳給它
+      this.$store.commit('changeCity', city)
+      // 頁面跳轉到首頁，此爲編程方式的導航
+      this.$router.push('/')
     }
   },
   mounted () {
