@@ -15,8 +15,9 @@
   <!-- router-link，聲明方式導航，相當於<a>標簽 -->
   <router-link to='/city'>
     <div class="header-right">
-      <!-- 獲取Vuex建立的共用數據倉庫的資料 -->
-      {{this.$store.state.city}}
+      <!-- 獲取Vuex建立的共用數據（state）的資料 -->
+      {{this.city}}
+      <!-- {{this.doubleCity}} -->
       <span class="iconfont arrow-icon">
         &#xe610;
       </span>
@@ -26,8 +27,15 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  /*  mapState指把Vuex裏的公用數據(city)，映射到目前組件，名叫（city）的計算屬性（computed）裏 */
+  computed: {
+    ...mapState(['city'])
+    /*  指把Vuex裏叫doubleCity的getters，映射到目前組件，名叫（doubleCity）的計算屬性（computed）中  */
+    // ...mapGetters(['doubleCity'])
+  }
 }
 </script>
 //  用stylus來寫樣式,scoped指樣式只用於目前這個組件
