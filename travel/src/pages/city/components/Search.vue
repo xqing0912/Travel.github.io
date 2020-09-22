@@ -26,6 +26,7 @@
 <script>
 //  引人better-scroll讓頁面可以向下滑動
 import Bscroll from 'better-scroll'
+import {mapMutations} from 'Vuex'
 export default {
   name: 'CitySearch',
   props: {
@@ -70,10 +71,13 @@ export default {
   methods: {
     handleCityClick (city) {
     // 在store裏面透過commit方法直接調用叫changeCity的mutations，并把city傳給它
-      this.$store.commit('changeCity', city)
+      // this.$store.commit('changeCity', city)
+      this.changeCity(city)
       // 頁面跳轉到首頁，此爲編程方式的導航
       this.$router.push('/')
-    }
+    },
+    //  把Vuex裏的名叫changeCity的Mutations，映射到目前組件中名叫changeCity的方法裏
+    ...mapMutations(['changeCity'])
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.search)
