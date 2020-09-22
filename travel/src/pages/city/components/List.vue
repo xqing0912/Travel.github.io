@@ -49,7 +49,7 @@
 <script>
 import BetterScroll from 'better-scroll'
 //  mapState, mapMutations是Vuex提供的方法
-import {mapState, mapMutations} from 'Vuex'
+import {mapState, mapMutations} from 'vuex'
 export default {
   name: 'CityList',
   props: {
@@ -72,7 +72,7 @@ export default {
       //  頁面跳轉到首頁，此爲編程方式的導航
       this.$router.push('/')
     },
-    //  把Vuex裏的名叫changeCity的Mutations，映射到目前組件中名叫changeCity的方法裏
+    //  把Vuex裏的名叫changeCity的Mutations，映射到目前組件中名叫changeCityOne的方法裏
     ...mapMutations(['changeCity'])
   },
   watch: {
