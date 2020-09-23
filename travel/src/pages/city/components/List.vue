@@ -49,7 +49,7 @@
 <script>
 import BetterScroll from 'better-scroll'
 //  mapState, mapMutations是Vuex提供的方法
-import {mapState, mapMutations} from 'Vuex'
+import {mapState, mapMutations} from 'vuex'
 export default {
   name: 'CityList',
   props: {
