@@ -1,0 +1,9 @@
+iconfont的使用：
+
+  1.找圖標，并且加到購物車，再添加到項目
+
+   2.點擊下載到本地，解壓縮后複製  iconfont.eot、iconfont.svg、iconfont.ttf、iconfont.woff，到自己項目iconfont資料夾
+
+  3.重新複製  iconfont.css  裏面的 url(...base64....)  format('woff2'),  這段内容到自己的項目資料夾
+
+  4.複製圖片代碼到自己的網頁裏面要添加的位置
