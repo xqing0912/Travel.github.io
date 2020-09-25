@@ -46,6 +46,7 @@ export default {
     }
   },
   activated () {
+    // 監聽window中滑鼠的滾動事件，然後執行handleScroll函數
     window.addEventListener('scroll', this.handleScroll)
   }
 }
