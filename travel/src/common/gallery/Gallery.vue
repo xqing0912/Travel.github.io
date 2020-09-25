@@ -32,6 +32,7 @@ export default {
           el: '.swiper-pagination',
           type: 'fraction'
         },
+        //  當swiper插件監聽到目前元素或者是父級元素的DOM結構發生了變化時，會自動刷新一次
         observeParents: true,
         observer: true
       }

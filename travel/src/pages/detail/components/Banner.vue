@@ -1,10 +1,10 @@
 <template>
   <div>
       <div class="banner" @click="handleBannerClick">
-          <img class="banner-img" src="https://imgs.qunarzz.com/vs_ceph_vs_tts/5ce99122-68b9-40a0-83a0-cb0a93ccaed2.jpg_r_390x260x95_d7de1d45.jpg" />
+          <img class="banner-img" src="https://img1.qunarzz.com/travel/d4/1603/5b/5d269d13378751f7.jpg_r_640x480x95_b71edbf9.jpg" />
           <div class="banner-info">
               <div class="banner-title">
-                丽江泸沽湖5日自由行丨直飞丽江3晚雪山语客栈+1晚锦尚居客栈赠送鲜花铺床
+                去過日月潭的人一定都知道用風景如畫四個字都不足以形容出日月潭的美，見過日月潭美景的人在遇到其他美景似乎都變成了將就。門票免費
               </div>
               <div class="banner-number">
                   <span class="iconfont banner-icon">
@@ -25,7 +25,7 @@ export default {
   data () {
     return {
       showGallery: false,
-      imgArray: ['https://imgs.qunarzz.com/vs_ceph_vs_tts/efb93c84-2622-4b41-b4f1-a837f4dbabe2.jpg_r_390x260x95_817e5e21.jpg', 'https://imgs.qunarzz.com/vs_ceph_vs_tts/532c0c54-c1b9-4492-ad34-d41bb0887475.jpg_r_390x260x95_39e07977.jpg', 'https://imgs.qunarzz.com/vs_ceph_vs_tts/0d31c7e7-f7d3-4b62-a805-e8c0d25e7077.jpg_r_390x260x95_64d57053.jpg', 'https://imgs.qunarzz.com/vs_ceph_vs_tts/0a0cef49-07cd-4835-ba2b-763026f116e0.jpg_r_390x260x95_19e75b6a.jpg']
+      imgArray: ['https://img1.qunarzz.com/travel/d6/1804/cd/aec45c155040e3b5.jpg_r_640x1199x95_2f9fb481.jpg', 'https://img1.qunarzz.com/travel/d6/1804/b7/dc9ae33051f9b5b5.jpg_r_640x1199x95_6ba9db30.jpg', 'https://img1.qunarzz.com/travel/d2/1603/3c/7008f9353aeeb4f7.jpg_r_640x480x95_eabd410d.jpg', 'https://img1.qunarzz.com/travel/d2/1603/6d/bf0efb4e3625c3f7.jpg_r_640x480x95_02c0aabc.jpg', 'https://img1.qunarzz.com/travel/d4/1603/db/d7c06343dd68f7.jpg_r_640x480x95_1afba9c3.jpg', 'https://img1.qunarzz.com/travel/d5/1603/ff/45cb530b6a97d1f7.jpg_r_640x480x95_157fa2d8.jpg', 'https://img1.qunarzz.com/travel/d6/1603/3e/acdb75ee287a99f7.jpg_r_640x480x95_e59620f7.jpg', 'https://img1.qunarzz.com/travel/d4/1603/9e/d2ec3023ee382ef7.jpg_r_640x480x95_03fb079e.jpg']
     }
   },
   methods: {
