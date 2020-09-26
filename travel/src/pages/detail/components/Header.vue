@@ -29,6 +29,8 @@ export default {
   },
   methods: {
     handleScroll () {
+      // console.log(document.documentElement.scrollTop)
+      //  儲存頁面卷軸的高度
       const scrollTop = document.documentElement.scrollTop
       if (scrollTop > 60) {
         let opacity = scrollTop / 140
@@ -45,9 +47,15 @@ export default {
       }
     }
   },
+  //  進入頁面就觸發的生命周期函數，這會影響全局的組件
   activated () {
-    // 監聽window中滑鼠的滾動事件，然後執行handleScroll函數
+    // 頁面展示的時候，監聽window中scroll滾動事件，然後執行handleScroll函數
     window.addEventListener('scroll', this.handleScroll)
+  },
+  //  頁面即將被隱藏，或者頁面即將被替換成新的頁面時執行的生命周期函數
+  deactivated () {
+    //  頁面隱藏的時候，對scroll這個全局事件解綁
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
