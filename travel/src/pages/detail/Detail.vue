@@ -22,13 +22,34 @@ export default {
   data () {
     return {
       list: [{
-        title: '成人票'
+        title: '個人票',
+        children: [{
+          title: '成人票'
+        }, {
+          title: '學生票'
+        }, {
+          title: '兒童票'
+        }, {
+          title: '博幼票'
+        }]
       }, {
-        title: '小孩票'
+        title: '團體票',
+        children: [{
+          title: '成人票'
+        }, {
+          title: '學生票'
+        }, {
+          title: '兒童票'
+        }, {
+          title: '博幼票'
+        }]
       }, {
-        title: '學生票'
-      }, {
-        title: '特惠票'
+        title: '停車場清潔費',
+        children: [{
+          title: '大/小客車100元'
+        }, {
+          title: '機車20元'
+        }]
       }]
     }
   }

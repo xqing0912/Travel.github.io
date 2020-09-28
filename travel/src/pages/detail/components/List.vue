@@ -6,6 +6,11 @@
                 </span>
                 {{item.title}}
             </div>
+            <!-- 如果item裏面有children這項，表示它是一個多級的項目 -->
+            <div v-if="item.children" class="item-children">
+              <!-- list組件裏調用自己名稱的組件，稱爲遞歸組件 -->
+              <detail-list :list="item.children"></detail-list>
+            </div>
         </div>
     </div>
 </template>
