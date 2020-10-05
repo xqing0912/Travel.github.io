@@ -1,13 +1,10 @@
 <template>
   <div>
-    <detail-banner :sightName="sightName"
-     :bannerImg="bannerImg"
-      :imgArray="imgArray">
+    <detail-banner :sightName="sightName" :bannerImg="bannerImg" :imgArray="imgArray">
     </detail-banner>
     <detail-header></detail-header>
     <div class="content">
-      <detail-list
-       :list="list">
+      <detail-list :list="list">
       </detail-list>
     </div>
   </div>
@@ -31,7 +28,7 @@ export default {
       bannerImg: '',
       imgArray: [],
       list: [],
-      id: ''
+      pageId: 0
     }
   },
   methods: {
@@ -46,25 +43,21 @@ export default {
       res = res.data
       if (res.ret && res.data) {
         const data = res.data
-        console.log(data)
-        this.sightName = data.sightName
-        // console.log(sightName)
-        this.bannerImg = data.bannerImg
-        this.imgArray = data.galleryImgs
-        console.log(this.imgArray.length)
-        this.list = data.priceType
+        this.sightName = data[this.pageId].sightName
+        // console.log(this.sightName)
+        this.bannerImg = data[this.pageId].bannerImg
+        this.imgArray = data[this.pageId].galleryImgs
+        this.list = data[this.pageId].priceType
       }
     }
   },
   mounted () {
-    this.id = this.$route.params.id
     this.getDetailInfo()
   },
   activated () {
-    if (this.id !== this.$route.params.id) {
-      this.id = this.$route.params.id
-      this.getDetailInfo()
-    }
+    this.getDetailInfo()
+    this.pageId = this.$route.params.id
+    console.log(this.pageId)
   }
 }
 </script>

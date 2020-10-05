@@ -1,7 +1,9 @@
 <template>
   <div>
-      <div class="banner" @click="handleBannerClick">
-          <img class="banner-img" :src="bannerImg" />
+      <div class="banner"
+        @click="handleBannerClick">
+          <img class="banner-img"
+            :src="bannerImg" />
           <div class="banner-info">
               <div class="banner-title">
                 {{this.sightName}}
@@ -10,14 +12,12 @@
                   <span class="iconfont banner-icon">
                     &#xe6fc;
                   </span>
-                  8
+                  {{this.imgArray.length}}
               </div>
           </div>
       </div>
       <banner-gallery
-       :imgArray="imgArray"
-        v-show="showGallery"
-         @close="handleGalleryClose">
+       :imgArray="imgArray" v-show="showGallery" @close="handleGalleryClose">
       </banner-gallery>
     </div>
 </template>

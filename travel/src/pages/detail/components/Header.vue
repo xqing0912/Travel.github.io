@@ -5,7 +5,8 @@
                 &#xe624;
             </div>
         </router-link>
-        <div class="header-fixed" v-show="!showHeaderAbs" :style="opacityStyle">
+        <div class="header-fixed"
+          v-show="!showHeaderAbs" :style="opacityStyle">
             <router-link to="/">
                 <div class="iconfont header-fixed-back">
                     &#xe624;
