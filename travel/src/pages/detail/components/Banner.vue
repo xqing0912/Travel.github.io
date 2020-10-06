@@ -16,14 +16,17 @@
               </div>
           </div>
       </div>
-      <banner-gallery
-       :imgArray="imgArray" v-show="showGallery" @close="handleGalleryClose">
-      </banner-gallery>
+      <fade-animation>
+        <banner-gallery
+        :imgArray="imgArray" v-show="showGallery" @close="handleGalleryClose">
+        </banner-gallery>
+      </fade-animation>
     </div>
 </template>
 
 <script>
 import BannerGallery from 'common/gallery/Gallery'
+import FadeAnimation from 'common/fadeAnimation/fadeAnimation'
 export default {
   name: 'DetailBanner',
   props: {
@@ -45,7 +48,8 @@ export default {
     }
   },
   components: {
-    BannerGallery
+    BannerGallery,
+    FadeAnimation
   }
 }
 </script>
