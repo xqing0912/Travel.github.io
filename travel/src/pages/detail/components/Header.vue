@@ -5,7 +5,8 @@
                 &#xe624;
             </div>
         </router-link>
-        <div class="header-fixed" v-show="!showHeaderAbs" :style="opacityStyle">
+        <div class="header-fixed"
+          v-show="!showHeaderAbs" :style="opacityStyle">
             <router-link to="/">
                 <div class="iconfont header-fixed-back">
                     &#xe624;
@@ -37,10 +38,7 @@ export default {
         // opacity限制在0~1之間
         opacity = opacity > 1 ? 1 : opacity
         // 把opacityStyle重新賦值一個對象
-        this.opacityStyle = {
-        //   opacity: opacity
-          opacity
-        }
+        this.opacityStyle = {opacity}
         this.showHeaderAbs = false
       } else {
         this.showHeaderAbs = true

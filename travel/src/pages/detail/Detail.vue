@@ -1,13 +1,10 @@
 <template>
   <div>
-    <detail-banner :sightName="sightName"
-     :bannerImg="bannerImg"
-      :imgArray="imgArray">
+    <detail-banner :sightName="sightName" :bannerImg="bannerImg" :imgArray="imgArray">
     </detail-banner>
     <detail-header></detail-header>
     <div class="content">
-      <detail-list
-       :list="list">
+      <detail-list :list="list">
       </detail-list>
     </div>
   </div>
@@ -30,13 +27,12 @@ export default {
       sightName: '',
       bannerImg: '',
       imgArray: [],
-      list: [],
-      id: ''
+      list: []
     }
   },
   methods: {
     getDetailInfo () {
-      axios.get('/api/detail-1.json', {
+      axios.get('/api/detail.json', {
         params: {
           id: this.$route.params.id
         }
@@ -46,25 +42,16 @@ export default {
       res = res.data
       if (res.ret && res.data) {
         const data = res.data
-        console.log(data)
         this.sightName = data.sightName
-        // console.log(sightName)
+        // console.log(this.sightName)
         this.bannerImg = data.bannerImg
         this.imgArray = data.galleryImgs
-        console.log(this.imgArray.length)
         this.list = data.priceType
       }
     }
   },
   mounted () {
-    this.id = this.$route.params.id
     this.getDetailInfo()
-  },
-  activated () {
-    if (this.id !== this.$route.params.id) {
-      this.id = this.$route.params.id
-      this.getDetailInfo()
-    }
   }
 }
 </script>

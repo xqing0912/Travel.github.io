@@ -3,7 +3,8 @@
         <div class="wrapper">
             <swiper :options="swiperOptions">
                 <!-- slides -->
-                <swiper-slide v-for="(item, index) in imgArray" :key="index">
+                <swiper-slide
+                  v-for="(item, index) in imgArray" :key="index">
                     <img class="gallery-image" :src="item" />
                 </swiper-slide>
                 <!-- Optional controls -->
