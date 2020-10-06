@@ -27,13 +27,12 @@ export default {
       sightName: '',
       bannerImg: '',
       imgArray: [],
-      list: [],
-      pageId: 0
+      list: []
     }
   },
   methods: {
     getDetailInfo () {
-      axios.get('/api/detail-1.json', {
+      axios.get('/api/detail.json', {
         params: {
           id: this.$route.params.id
         }
@@ -43,21 +42,16 @@ export default {
       res = res.data
       if (res.ret && res.data) {
         const data = res.data
-        this.sightName = data[this.pageId].sightName
+        this.sightName = data.sightName
         // console.log(this.sightName)
-        this.bannerImg = data[this.pageId].bannerImg
-        this.imgArray = data[this.pageId].galleryImgs
-        this.list = data[this.pageId].priceType
+        this.bannerImg = data.bannerImg
+        this.imgArray = data.galleryImgs
+        this.list = data.priceType
       }
     }
   },
   mounted () {
     this.getDetailInfo()
-  },
-  activated () {
-    this.getDetailInfo()
-    this.pageId = this.$route.params.id
-    console.log(this.pageId)
   }
 }
 </script>
