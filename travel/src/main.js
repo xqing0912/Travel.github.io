@@ -7,6 +7,7 @@ import router from './router'
 import fastClick from 'fastclick'
 /* vue-awesome-swiper */
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'babel-polyfill'
 import store from './storehouse'
 /* 引入reset.css,網頁初始化,整個文件裏的styles是自定義的路徑,指build/webpack.base.conf.js的resolve下的替代路徑 */
 import 'styles/reset.css'
