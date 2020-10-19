@@ -4,7 +4,7 @@
           <li class="item"
               v-for="item of letters"
               :key="item"
-              :ref="item"  @touchStart="handleTouchStart"  @touchMove="handleTouchMove" @touchEnd="handleTouchEnd"  @click="handleAlphabetClick">
+              :ref="item"  @touchStart.prevent="handleTouchStart"  @touchMove="handleTouchMove" @touchEnd="handleTouchEnd"  @click="handleAlphabetClick">
                   {{item}}
           </li>
       </ul>
